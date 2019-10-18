@@ -1,0 +1,19 @@
+package com.ascent.autobcm.service;
+
+import com.ascent.autobcm.exception.EntityTypeAttributeDefinitionAlreadyPresent;
+import com.ascent.autobcm.exception.NoSuchEntityTypeAttributeDefinitionFound;
+import com.ascent.autobcm.model.EntityTypeAttributeDefinition;
+
+public interface EntityTypeAttributeDefinitionService {
+
+	public EntityTypeAttributeDefinition saveEntityTypeAttributeDefinition(EntityTypeAttributeDefinition objToPersist)
+			throws EntityTypeAttributeDefinitionAlreadyPresent;
+
+	public EntityTypeAttributeDefinition findByEntitiesTypeIdAndAttributeName(long entityTypeId,
+			String attributeNameToPersist) throws NoSuchEntityTypeAttributeDefinitionFound;
+
+	public EntityTypeAttributeDefinition findById(long entityTypeAttributeId)  throws NoSuchEntityTypeAttributeDefinitionFound;
+	
+	public EntityTypeAttributeDefinition activateOrReactivateEntityTypeAttributeDefinition(EntityTypeAttributeDefinition objToPersist);
+
+}
